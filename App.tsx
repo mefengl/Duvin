@@ -1,37 +1,47 @@
-import React, {useState} from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {SafeAreaView, View, Text, StyleSheet, AppState} from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
+import ListScreen from './ListScreen';
 
 const App = () => {
   const [copiedText, setCopiedText] = useState('');
 
-  const copyToClipboard = () => {
-    Clipboard.setString('hello world');
+  const checkClipboardContent = async () => {
+    const content = await Clipboard.getString();
+    if (content !== '') {
+      setCopiedText(content);
+    }
   };
 
-  const fetchCopiedText = async () => {
-    const text = await Clipboard.getString();
-    setCopiedText(text);
-  };
+  useEffect(() => {
+    const onFocus = async () => {
+      checkClipboardContent();
+    };
+
+    const appStateListener = AppState.addEventListener('change', state => {
+      if (state === 'active') {
+        checkClipboardContent();
+      }
+    });
+
+    onFocus();
+
+    return () => {
+      appStateListener.remove();
+    };
+  }, []);
 
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
-        <TouchableOpacity onPress={copyToClipboard}>
-          <Text>Click here to copy to Clipboard</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={fetchCopiedText}>
-          <Text>View copied text</Text>
-        </TouchableOpacity>
-
         <Text style={styles.copiedText}>{copiedText}</Text>
       </View>
+      <ListScreen
+        items={[
+          {id: '1', title: 'Item 1'},
+          {id: '2', title: 'Item 2'},
+        ]}
+      />
     </SafeAreaView>
   );
 };
