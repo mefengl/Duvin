@@ -1,7 +1,7 @@
 https://github.com/react-native-clipboard/clipboard
 
 ni @react-native-clipboard/clipboard
-npx pod-install -y
+npx pod-install
 
 ```jsx
 import React, {useState} from 'react';
