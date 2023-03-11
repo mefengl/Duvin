@@ -1,3 +1,9 @@
+https://github.com/react-native-clipboard/clipboard
+
+ni @react-native-clipboard/clipboard
+npx pod-install -y
+
+```jsx
 import React, {useState} from 'react';
 import {
   SafeAreaView,
@@ -49,3 +55,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+```
