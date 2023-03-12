@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "AskMore.app"
-               BlueprintName = "AskMore"
-               ReferencedContainer = "container:AskMore.xcodeproj">
+               BuildableName = "Duvin.app"
+               BlueprintName = "Duvin"
+               ReferencedContainer = "container:Duvin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AskMoreTests.xctest"
-               BlueprintName = "AskMoreTests"
-               ReferencedContainer = "container:AskMore.xcodeproj">
+               BuildableName = "DuvinTests.xctest"
+               BlueprintName = "DuvinTests"
+               ReferencedContainer = "container:Duvin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AskMore.app"
-            BlueprintName = "AskMore"
-            ReferencedContainer = "container:AskMore.xcodeproj">
+            BuildableName = "Duvin.app"
+            BlueprintName = "Duvin"
+            ReferencedContainer = "container:Duvin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AskMore.app"
-            BlueprintName = "AskMore"
-            ReferencedContainer = "container:AskMore.xcodeproj">
+            BuildableName = "Duvin.app"
+            BlueprintName = "Duvin"
+            ReferencedContainer = "container:Duvin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
