@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "AutoCopy.app"
-               BlueprintName = "AutoCopy"
-               ReferencedContainer = "container:AutoCopy.xcodeproj">
+               BuildableName = "AskMore.app"
+               BlueprintName = "AskMore"
+               ReferencedContainer = "container:AskMore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AutoCopyTests.xctest"
-               BlueprintName = "AutoCopyTests"
-               ReferencedContainer = "container:AutoCopy.xcodeproj">
+               BuildableName = "AskMoreTests.xctest"
+               BlueprintName = "AskMoreTests"
+               ReferencedContainer = "container:AskMore.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AutoCopy.app"
-            BlueprintName = "AutoCopy"
-            ReferencedContainer = "container:AutoCopy.xcodeproj">
+            BuildableName = "AskMore.app"
+            BlueprintName = "AskMore"
+            ReferencedContainer = "container:AskMore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AutoCopy.app"
-            BlueprintName = "AutoCopy"
-            ReferencedContainer = "container:AutoCopy.xcodeproj">
+            BuildableName = "AskMore.app"
+            BlueprintName = "AskMore"
+            ReferencedContainer = "container:AskMore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
