@@ -1,3 +1,4 @@
+import 'react-native-url-polyfill/auto';
 import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
@@ -27,6 +28,55 @@ const questions = [
 type one_conversation = {
   prompt: string;
   response: string;
+};
+
+import {Configuration, OpenAIApi} from 'openai';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const useOpenAIKey = () => {
+  const [openAIKey, setOpenAIKey] = useState('');
+  useEffect(() => {
+    const getOpenAIKey = async () => {
+      const OPENAI_API_KEY = await AsyncStorage.getItem('OPENAI_API_KEY');
+      if (OPENAI_API_KEY) {
+        setOpenAIKey(OPENAI_API_KEY);
+      }
+    };
+    getOpenAIKey();
+  }, []);
+  return openAIKey;
+};
+
+const useOneExampleConversation = () => {
+  const apiKey = useOpenAIKey();
+  const [conversation, setConversation] = useState<one_conversation>({
+    prompt: '子在川上曰,这句话是什么意思？',
+    response: '',
+  });
+  useEffect(() => {
+    if (apiKey !== '') {
+      const config = new Configuration({
+        apiKey,
+      });
+      const openai = new OpenAIApi(config);
+      const getAnswer = async () => {
+        const prompt = conversation.prompt;
+        const completion = await openai.createChatCompletion({
+          model: 'gpt-3.5-turbo',
+          messages: [{role: 'user', content: prompt}],
+        });
+        const answer = completion.data.choices[0].message?.content;
+        setConversation({
+          prompt,
+          // @ts-ignore
+          response: answer,
+        });
+      };
+      getAnswer();
+    }
+  }, [apiKey, conversation.prompt]);
+
+  return conversation;
 };
 
 const App = () => {
@@ -60,6 +110,7 @@ const App = () => {
     return () => appStateListener.remove();
   }, []);
 
+  const oneExampleConversation = useOneExampleConversation();
   return (
     <SafeAreaView style={styles.safeArea}>
       <OpenAIKeyInputBox />
@@ -67,7 +118,8 @@ const App = () => {
         <Text style={styles.copiedText}>{copiedText}</Text>
       </View>
       <FlatList
-        data={conversations}
+        // data={conversations}
+        data={[oneExampleConversation]}
         renderItem={({item}) => (
           <View style={styles.container}>
             <Text>{item.prompt}</Text>
