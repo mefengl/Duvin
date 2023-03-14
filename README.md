@@ -1,4 +1,8 @@
-# Duvin (多问)
+# Duvin
+
+> Duvin means "some wine" in French
+>
+> Duvin sounds like 多问, which means "ask more" in Chinese
 
 > 要多问
 >
